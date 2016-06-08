@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1></h1>
+
+<p id="Balance"></p>
+
+<button id = "b1"
+onclick="myFunction()">
+Make a deposit.</button>
+
+<h2></h2>
+
+<p2 id="question"></p2>
+
+
+<button id = "b2"
+onclick="myFunction2()">
+Make a withdrawal.</button>
+
+<p id="demo2"></p>
+
+
+
+
+<script>
+var deposit = 0;
+var withdraw = 0;
+var total = 500;
+document.getElementById("Balance").innerHTML =
+"Your Balance is: $" + total;
+
+function myFunction() {
+    document.getElementById("question").innerHTML = "How much would you like to deposit?";
+    var el = document.getElementById("b2");
+    el.style.display = 'none';
+}
+
+function myFunction2() {
+    document.getElementById("question").innerHTML = "How much would you like to withdraw?";
+    var el = document.getElementById("b1");
+    el.style.display = 'none';
+}
+
+</script>
+
+</body>
+</html>

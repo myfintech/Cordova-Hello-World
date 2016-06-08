@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="toptal.hello" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-intent href="market:*" />
+    <splash density="land-hdpi" src="shark_3_by_eliecer2929-d5odkvj.png" />
+    <splash density="land-ldpi" src="shark_3_by_eliecer2929-d5odkvj.png" />
+    <splash density="land-mdpi" src="shark_3_by_eliecer2929-d5odkvj.png" />
+    <splash density="land-xhdpi" src="shark_3_by_eliecer2929-d5odkvj.png" />
+    <splash density="port-hdpi" src="shark_3_by_eliecer2929-d5odkvj.png" />
+    <splash density="port-ldpi" src="shark_3_by_eliecer2929-d5odkvj.png" />
+    <splash density="port-mdpi" src="shark_3_by_eliecer2929-d5odkvj.png" />
+    <splash density="port-xhdpi" src="shark_3_by_eliecer2929-d5odkvj.png" />
+    <name>HelloToptal</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon src="shark_3_by_eliecer2929-d5odkvj.png" />
+    <preference name="SplashScreenDelay" value="5000" />
+</widget>
