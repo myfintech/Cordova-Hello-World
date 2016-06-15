@@ -1,0 +1,42 @@
+***Cordova iOS badge notifications***
+
+Cordova badge notifications require the following plugin:
+**cordova plugin add https://github.com/katzer/cordova-plugin-badge.git**
+
+**Badge notifications require user granting permission**
+The plugin should take care of this, if not you can add the following method.
+
+cordova.plugins.notification.badge.registerPermission(function (granted) {
+    // console.log('Permission has been granted: ' + granted);
+});
+
+You can also check if user has already granted permission.
+
+cordova.plugins.notification.badge.hasPermission(function (granted) {
+    // console.log('Permission has been granted: ' + granted);
+});
+
+**Badge functions**
+
+cordova.plugins.notification.badge.set(int);
+cordova.plugins.notification.badge.increase(int);
+cordova.plugins.notification.badge.decrease(int);
+cordova.plugins.notification.badge.clear();
+
+Optionally .set, .increase, and .decrease can take a callback function and a scope as arguments. 
+The default scope does point to the plugin. 
+The callback will be invoked with the current badge number.
+ 
+cordova.plugins.notification.badge.set(Number, Function, Object);
+ 
+Like dialogs, badge notifications are not available before the deviceready event has been fired.
+ 
+document.addEventListener('deviceready', function () {
+    // cordova.plugins.notification.badge is now available
+}, false);
+
+*See dialog code example.
+
+https://github.com/katzer/cordova-plugin-badge
+
+Note: Badges are available in android but are not native to the platform.
