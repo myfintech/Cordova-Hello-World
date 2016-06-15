@@ -1,1 +1,48 @@
+***cordova-dialogs***
 
+
+**Installation**
+
+Dialogs require the following plugin:
+**cordova plugin add cordova-plugin-dialogs**
+
+***Methods***
+
+navigator.notification.alert
+navigator.notification.confirm
+navigator.notification.prompt
+navigator.notification.beep
+
+
+
+
+
+***navigator.notification.alert example***
+
+function foo() {
+    // do something
+}
+
+navigator.notification.alert(
+    'String',  // message
+    foo (function),         // callback
+    'String',            // title
+    'String'                  // buttonName
+);
+
+Note: Make sure to include a callback function even if it does nothing. (By the default the callback will close the dialog if your function does nothing, but it still needs to be included).
+
+
+***Examples of the other methods can be found in the cordova docs:
+https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-dialogs/
+
+
+*** *navigator is not available until after the deviceready event. ***
+
+
+** document.addEventListener("deviceready", onDeviceReady, false); **
+** function onDeviceReady() { **
+** console.log(navigator.notification); **
+** }
+
+**Make sure onDeviceReady() is being called or notifications will not work.
