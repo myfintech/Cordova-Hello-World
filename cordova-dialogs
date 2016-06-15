@@ -14,9 +14,6 @@ navigator.notification.prompt
 navigator.notification.beep
 
 
-
-
-
 ***navigator.notification.alert example***
 
 function foo() {
