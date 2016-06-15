@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notification Example</title>
+    <script src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+      document.getElementById("foo").innerHTML = "Device Ready";
+    }
+
+    function alertCalback () {
+      console.log('horray we did an alert!');
+    }
+
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertCalback,           // callback (action)
+            'title',                // title
+            'a button'              // button prompt
+        );
+    }
+
+    function playBeep() {
+        navigator.notification.beep(3);
+        //3 equals number of beeps
+    }
+    
+    function vibrate() {
+        navigator.notification.vibrate(2000);
+        //2000 is two seconds of vibration
+    }
+
+    </script>
+  </head>
+  <body>
+    <p id="foo"></p>
+    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+    <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
+    <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
+  </body>
+</html>
