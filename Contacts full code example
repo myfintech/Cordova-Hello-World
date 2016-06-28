@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<script src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+//document.getElementById("foo").innerHTML = "Device Ready";
+console.log("deviceReadyLogNavigatorNotification",navigator.notification);
+document.getElementById("form").style.visibility = 'hidden';
+//var fields       = ["*"]
+navigator.contacts.find(["*"], onSuccess, onError);
+console.log("sum");
+}
+function onSuccess(contacts) {
+    document.getElementById("foo2").innerHTML = 'Found ' + contacts.length + ' contacts.';
+}
+
+function onError(contactError) {
+  console.log("Error");
+    alert('Error!');
+}
+
+function opencontacts() {
+  navigator.contacts.pickContact(function(contact){
+        console.log("pickContact");
+        document.getElementById("foo3").innerHTML = 'The following contact has been selected:  ' + contact.name.formatted;
+    },function(err){
+        console.log('Error: ' + err);
+    });
+}
+
+function addNewContact() {
+  document.getElementById("form").style.visibility = 'visible';
+
+}
+
+function getnewcontactinfo(){
+  var name = document.getElementById("nameid").value;
+  var phonenumber = document.getElementById("phonenumberid").value;
+  var email = document.getElementById("emailid").value;
+  var phoneNumbers = [];
+  phoneNumbers[0] = new ContactField('mobile', phonenumber, true); // preferred number
+  //phoneNumbers[1] = new ContactField('mobile', '999-555-5432', false);
+  //phoneNumbers[2] = new ContactField('home', '203-555-7890', false);
+  var emails = [];
+  emails[0] = new ContactField('email', email, true);
+  var contact = navigator.contacts.create();
+  contact.displayName = name;
+  contact.nickname = name;
+  contact.phoneNumbers = phoneNumbers;
+  contact.emails = emails;
+  var name1 = new ContactName();
+  name.formatted = name;
+  contact.name1 = name;
+  contact.save(onSuccess2,onError2);
+}
+
+function onSuccess2(contact) {
+    alert("Contact saved to phone");
+}
+
+function onError2(contactError2) {
+    alert("Error = " + contactError.code);
+}
+
+    </script>
+    <body>
+    <p>Would you like to invite from friends from your contacts?</p>
+    <button onclick="opencontacts()">I definitely would</button>
+    <p id="foo"></p>
+    <button>Maybe later</button>
+    <p id="foo2"></p>
+    <p id="foo3"></p>
+    <button onclick="addNewContact()">Add new contact</button>
+    <form id="form">
+      Name:<br>
+      <input id="nameid" type="text" name="Name">
+      <br>
+      Phone Number:<br>
+      <input id="phonenumberid" type="number" name="Phone Number">
+      <br>
+      Email:<br>
+      <input id="emailid" type="text" name="Email">
+      <br>
+      <input type="submit" value="done" onclick="getnewcontactinfo()"  >
+      <!-- <input type="button" onclick=getnewcontactinfo() value="Done"> -->
+    </form>
+</html>
