@@ -1,12 +1,12 @@
 ## 0. Index
 1. [Steps for creating a Cordova project.](#1-steps for creating a cordova project.)
-2. [Changing app icon.](#2-changingappicon.)
-3. [Splash Screen.](#3-splash screen.)
+2. [Changing app icon.](#2-icon.)
+3. [Splash Screen.](#3-splashscreen.)
 
 
 
 ________________________________________
-## 1. Steps fo rcreating a Cordova project.
+## 1. Steps for rcreating a Cordova project.
 ________________________________________
 
 1. Install android and iOS sdk's.
@@ -74,7 +74,7 @@ By defualt the app will run on your device if it's connected. Otherwise it will 
 
 
 _____________________
-## 2. Changing app icon.
+## 2. Icon.
 _____________________
 
 
@@ -98,7 +98,7 @@ To use a different images for different platforms use:
 
 
 _____________________________________________________
-## 3. Splash Screen.
+## 3. SplashScreen.
 _____________________________________________________
 
 Adding a splash screen requires the following plugin:
