@@ -5,7 +5,7 @@
 
 
 ________________________________________
-## 1. Steps for creating a Cordova project.
+## 1. StepsforcreatingaCordova project.
 ________________________________________
 
 1. Install android and iOS sdk's.
@@ -73,7 +73,7 @@ By defualt the app will run on your device if it's connected. Otherwise it will 
 
 
 _____________________
-## 2. Changing app icon.
+## 2. Changingappicon
 _____________________
 
 
