@@ -1,12 +1,12 @@
 ## 0. Index
-1. [Steps for creating a Cordova project.](#1-stepsforcreatingacordovaproject)
-2. [Changing app icon.](#2-icon)
-3. [Splash Screen.](#3-splashscreen)
+1. [FirstSteps](#1-firststeps)
+2. [Icon](#2-icon)
+3. [SplashScreen](#3-splashscreen)
 
 
 
 ________________________________________
-## 1. Steps for creating a Cordova project
+## 1. FirstSteps
 ________________________________________
 
 1. Install android and iOS sdk's.
