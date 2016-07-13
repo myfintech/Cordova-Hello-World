@@ -91,7 +91,7 @@ To use a different images for different platforms use:
 
 
 _____________________________________________________
-**Splash Screen**
+**Splash Screen.**
 _____________________________________________________
 
 Adding a splash screen requires the following plugin:
@@ -110,7 +110,7 @@ The splash resource goes in the config.xml file.
 
 
 __________________________________________________________
-**Accessing Device Contacts**
+**Accessing Device Contacts.**
 __________________________________________________________
 
 
@@ -322,4 +322,89 @@ Example:
     });
    }
 ```
+
+
+
+__________________________________________________________________________________________________________
+**TouchID (iOS).**
+__________________________________________________________________________________________________________
+
+
+
+Minimum iOS version is 8 (error callbacks will be gracefully invoked on lower versions).
+
+Requires a fingerprint scanner, so an iPhone 5S or newer is required.
+
+In order to enable TouchId within your Cordova project you must install the following plugin:
+
+```cordova plugin add cordova-plugin-touch-id```
+
+
+First you'll want to check whether or not the user has a configured fingerprint scanner. You can use this to show a 'log in 
+with your fingerprint' button next to a username/password login form.
+
+```
+window.plugins.touchid.isAvailable(
+  
+  function(msg) {alert('ok: ' + msg)},    // success handler: TouchID available
+  
+  function(msg) {alert('not ok: ' + msg)} // error handler: no TouchID available
+
+);
+```
+If the onSuccess handler was called, you can scan the fingerprint. There are two options: verifyFingerprint and 
+verifyFingerprintWithCustomPasswordFallback. The first method will offer a fallback option called 'enter passcode' which 
+shows the default passcode UI when pressed. The second method will offer a fallback option called 'enter password' (not 
+passcode) which allows you to provide your own password dialog.
+```
+window.plugins.touchid.verifyFingerprint(
+
+  'Scan your fingerprint please', // this will be shown in the native scanner popup
+
+   function(msg) {alert('ok: ' + msg)}, // success handler: fingerprint accepted
+
+   function(msg) {alert('not ok: ' + JSON.stringify(msg))} // error handler with errorcode and localised reason
+
+);
+```
+The errorhandler of the method above can receive an error code of -2 which means the user pressed the 'enter password' 
+fallback.
+
+```
+window.plugins.touchid.verifyFingerprintWithCustomPasswordFallback(
+
+  'Scan your fingerprint please', // this will be shown in the native scanner popup
+
+   function(msg) {alert('ok: ' + msg)}, // success handler: fingerprint accepted
+
+   function(msg) {alert('not ok: ' + JSON.stringify(msg))} // error handler with errorcode and localised reason
+
+);
+```
+This will render a button labelled 'Enter password' in case the fingerprint is not recognized. If you want to provide your 
+own label ('Enter PIN' perhaps), you can use awkwardly named function (added in version 3.1.0):
+
+```
+window.plugins.touchid.verifyFingerprintWithCustomPasswordFallbackAndEnterPasswordLabel(
+
+  'Scan your fingerprint please', // this will be shown in the native scanner popup
+
+  'Enter PIN', // this will become the 'Enter password' button label
+
+   function(msg) {alert('ok: ' + msg)}, // success handler: fingerprint accepted
+
+   function(msg) {alert('not ok: ' + JSON.stringify(msg))} // error handler with errorcode and localised reason
+
+);
+```
+You can copy-paste these lines of code for a quick test:
+
+
+```
+<button onclick="window.plugins.touchid.isAvailable(function(msg) {alert('ok: ' + msg)}, function(msg) {alert('not ok: ' + msg)})">Touch ID available?</button>
+<button onclick="window.plugins.touchid.verifyFingerprint('Scan your fingerprint please', function(msg) {alert('ok: ' + msg)}, function(msg) {alert('not ok: ' + JSON.stringify(msg))})">Scan fingerprint</button>
+```
+
+
+
 
