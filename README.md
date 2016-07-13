@@ -1,6 +1,6 @@
 #Cordova installation and plugins for native features.
 
-Here you will find instructions for installing cordova and creating your first project. You will also find instructions and code samples for implementing native android and ios features through plugins in your cordova project.
+Here you will find instructions for installing Cordova and creating your first project. You will also find instructions and code samples for implementing native android and ios features through plugins in your Cordova project.
 
 ## 0. Index
 1. [FirstSteps](#1-firststeps)
