@@ -8,7 +8,7 @@ Here you will find instructions for installing Cordova and creating your first p
 3. [SplashScreen](#3-splashscreen)
 4. [Contacts](#4-contacts)
 5. [TouchID](#5-touchid)
-6. [3Dtouch](#-3Dtouch)
+6. [3Dtouch](#6-3dtouch)
 
 
 
