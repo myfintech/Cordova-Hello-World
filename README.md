@@ -63,6 +63,8 @@ By defualt the app will run on your device if it's connected. Otherwise it will 
 
 
 
+
+
 _____________________
 *Changing app icon.*
 _____________________
@@ -83,6 +85,9 @@ To use a different images for different platforms use:
 <https://cordova.apache.org/docs/en/latest/config_ref/images.html>
 
 
+
+
+
 _____________________________________________________
 *Splash Screen* 
 _____________________________________________________
@@ -96,6 +101,8 @@ The splash resource goes in the config.xml file.
 
 
 <https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/>
+
+
 
 
 
@@ -246,7 +253,7 @@ function onSuccess(contacts) {
 
 function onError(contactError) {
 
-    alert('onError!');
+  alert('onError!');
 
 };
 
@@ -283,11 +290,17 @@ contactError: Error callback function, invoked when an error occurs. [Optional]
 
 Example:
 function opencontacts() {
+  
   navigator.contacts.pickContact(function(contact){
-        console.log("pickContact");
-        document.getElementById("foo3").innerHTML = 'The following contact has been selected:  ' + contact.name.formatted;
+  
+    console.log("pickContact");
+  
+    document.getElementById("foo3").innerHTML = 'The following contact has been selected:  ' + contact.name.formatted;
+  
     },function(err){
+  
         console.log('Error: ' + err);
+  
     });
 }
 
