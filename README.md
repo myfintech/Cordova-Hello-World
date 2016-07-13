@@ -1,22 +1,16 @@
 # Cordova-Hello-World
-Steps for creating a simple Cordova project.
+Steps for creating a Cordova project.
 
-Install android and iOS sdk's.
-
-Install nodejs and git.
-
-Navigate to a directory where you would like to create your Cordova project.
-
-To bootstrap an application, type in the following command:
-
-**cordova create toptal toptal.hello HelloToptal**
-
-
+1. Install android and iOS sdk's.
+2. Install nodejs and git.
+3. **npm install -g cordova**
+4. Navigate to a directory where you would like to create your Cordova project.
+5. **cordova create "MyApp"**
 
 
 *Project Structure:*
 
-toptal/
+MyApp/
 
 
 |-- hooks/
@@ -32,7 +26,6 @@ toptal/
 
 
 `— config.xml
-
 
 
 
@@ -69,8 +62,9 @@ By defualt the app will run on your device if it's connected. Otherwise it will 
 
 
 
-
+_____________________
 *Changing app icon.*
+_____________________
 
 
 Go to the config.xml file.
@@ -88,9 +82,11 @@ To use a different images for different platforms use:
 <https://cordova.apache.org/docs/en/latest/config_ref/images.html>
 
 
+_____________________________________________________
+*Splash Screen* 
+_____________________________________________________
 
 Adding a splash screen requires the following plugin:
-
 
 **cordova plugin add cordova-plugin-splashscreen**
 
