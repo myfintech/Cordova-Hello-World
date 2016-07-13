@@ -65,6 +65,7 @@ By defualt the app will run on your device if it's connected. Otherwise it will 
 
 
 
+
 _____________________
 *Changing app icon.*
 _____________________
@@ -88,6 +89,7 @@ To use a different images for different platforms use:
 
 
 
+
 _____________________________________________________
 *Splash Screen* 
 _____________________________________________________
@@ -101,6 +103,7 @@ The splash resource goes in the config.xml file.
 
 
 <https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/>
+
 
 
 
@@ -218,44 +221,44 @@ contactFindOptions: Search options to filter navigator.contacts. [Optional]
 
 Example 1:
 
-function onDeviceReady() {
+   function onDeviceReady() {
 
-navigator.contacts.find(["*"], onSuccess, onError);
+   navigator.contacts.find(["*"], onSuccess, onError);
 
-}
+   }
 
 
-function onSuccess(contacts) {
+   function onSuccess(contacts) {
 
     document.getElementById("foo2").innerHTML = 'Found ' + contacts.length + ' contacts.';
 
-}
+   }
 
 
-function onError(contactError) {
+   function onError(contactError) {
 
-  console.log("Error");
+   console.log("Error");
 
     alert('Error!');
 
-}
+   }
 
 
 Example 2:
 
 
-function onSuccess(contacts) {
+   function onSuccess(contacts) {
 
     alert('Found ' + contacts.length + ' contacts.');
 
-};
+   };
 
 
-function onError(contactError) {
+   function onError(contactError) {
 
-  alert('onError!');
+    alert('onError!');
 
-};
+   };
 
 
 // find all contacts with 'Bob' in any name field
@@ -289,9 +292,9 @@ contactSuccess: Success callback function invoked with the single Contact object
 contactError: Error callback function, invoked when an error occurs. [Optional]
 
 Example:
-function opencontacts() {
+   function opencontacts() {
   
-  navigator.contacts.pickContact(function(contact){
+    navigator.contacts.pickContact(function(contact){
   
     console.log("pickContact");
   
@@ -302,6 +305,6 @@ function opencontacts() {
         console.log('Error: ' + err);
   
     });
-}
+   }
 
 
