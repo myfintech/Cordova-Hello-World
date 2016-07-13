@@ -1,5 +1,6 @@
-# Cordova-Hello-World
-Steps for creating a Cordova project.
+________________________________________
+*Steps for creating a Cordova project.*
+________________________________________
 
 1. Install android and iOS sdk's.
 2. Install nodejs and git.
