@@ -405,6 +405,7 @@ You can copy-paste these lines of code for a quick test:
 <button onclick="window.plugins.touchid.verifyFingerprint('Scan your fingerprint please', function(msg) {alert('ok: ' + msg)}, function(msg) {alert('not ok: ' + JSON.stringify(msg))})">Scan fingerprint</button>
 ```
 
+<https://github.com/Telerik-Verified-Plugins/TouchID>
 
 
 
