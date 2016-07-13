@@ -1,5 +1,5 @@
 ## 0. Index
-1. [Steps for creating a Cordova project.](#1-steps for creating a cordova project)
+1. [Steps for creating a Cordova project.](#1-stepsforcreatingacordovaproject)
 2. [Changing app icon.](#2-icon)
 3. [Splash Screen.](#3-splashscreen)
 
