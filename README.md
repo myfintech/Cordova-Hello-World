@@ -1,3 +1,4 @@
+## 0. Index
 1. [Steps for creating a Cordova project.](#1-stepsforcreatingacordovaproject)
 2. [Changing app icon.](#2-changingappicon)
 
