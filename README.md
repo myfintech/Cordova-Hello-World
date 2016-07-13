@@ -3,7 +3,7 @@
 2. [Icon](#2-icon)
 3. [SplashScreen](#3-splashscreen)
 4. [Contacts](#4-contacts)
-5. [TouchID](#5-touchiD)
+5. [TouchID](#5-touchid)
 
 
 
