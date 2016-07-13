@@ -7,9 +7,8 @@
 
 
 
-________________________________________
 ## 1. FirstSteps
-________________________________________
+
 
 1. Install android and iOS sdk's.
 2. Install nodejs and git.
@@ -75,9 +74,9 @@ By defualt the app will run on your device if it's connected. Otherwise it will 
 
 
 
-_____________________
+
 ## 2. Icon
-_____________________
+
 
 
 Go to the config.xml file.
@@ -99,9 +98,9 @@ To use a different images for different platforms use:
 
 
 
-_____________________________________________________
+
 ## 3. SplashScreen
-_____________________________________________________
+
 
 Adding a splash screen requires the following plugin:
 
@@ -118,9 +117,9 @@ The splash resource goes in the config.xml file.
 
 
 
-__________________________________________________________
+
 ## 4. Contacts
-__________________________________________________________
+
 
 
 
@@ -334,9 +333,7 @@ Example:
 
 
 
-__________________________________________________________________________________________________________
 ## 5. TouchID
-__________________________________________________________________________________________________________
 
 
 
