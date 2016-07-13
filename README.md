@@ -484,8 +484,8 @@ Required plugin: ```cordova plugin add cordova-plugin-3dtouch```
   ```ThreeDeeTouch.enableLinkPreview();
   ```
   
-Yeap that simple
+Yeap that simple.
 
-<https://github.com/EddyVerbruggen/cordova-plugin-3dtouch>
+More info: <https://github.com/EddyVerbruggen/cordova-plugin-3dtouch>
 
   
