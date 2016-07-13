@@ -1,12 +1,12 @@
 ________________________________________
-*Steps for creating a Cordova project.*
+**Steps for creating a Cordova project.**
 ________________________________________
 
 1. Install android and iOS sdk's.
 2. Install nodejs and git.
-3. **npm install -g cordova**
+3. ```npm install -g cordova```
 4. Navigate to a directory where you would like to create your Cordova project.
-5. **cordova create "MyApp"**
+5. ```cordova create "MyApp"```
 
 
 *Project Structure:*
@@ -41,22 +41,22 @@ config.xml file is where you can change metadata for your application, such as a
 *Next steps:*
 
 
-**cordova platform add android**
+```cordova platform add android```
 
 
-**cordova platform add ios**
+```cordova platform add ios```
 
 
-**cordova build** (Builds both platforms)
+```cordova build``` (Builds both platforms)
 
 
 or 
 
 
-**cordova build ios** / **cordova build android**
+```cordova build ios```/ ```cordova build android```
 
 
-**cordova run ios** or **cordova run android**
+```cordova run ios```or ```cordova run android```
 
 
 By defualt the app will run on your device if it's connected. Otherwise it will run on the platfroms emulator.
@@ -67,7 +67,7 @@ By defualt the app will run on your device if it's connected. Otherwise it will 
 
 
 _____________________
-*Changing app icon.*
+**Changing app icon.**
 _____________________
 
 
@@ -91,7 +91,7 @@ To use a different images for different platforms use:
 
 
 _____________________________________________________
-*Splash Screen* 
+**Splash Screen**
 _____________________________________________________
 
 Adding a splash screen requires the following plugin:
@@ -110,29 +110,31 @@ The splash resource goes in the config.xml file.
 
 
 __________________________________________________________
-Accessing Device Contacts
+**Accessing Device Contacts**
 __________________________________________________________
 
 
 
 In order to access user contacts you must first install the following plugin:
 
-**cordova plugin add cordova-plugin-contacts**
+```cordova plugin add cordova-plugin-contacts```
 
 *This plugin defines a global navigator.contacts object, which provides access to the device contacts database.
-Although the object is attached to the global scoped navigator, it is not available until after the deviceready event.
+  Although the object is attached to the global scoped navigator, it is not available until after the deviceready event.
 
-Methods:
-
-navigator.contacts.create
-
-navigator.contacts.find
-
-navigator.contacts.pickContact
+**Methods:**
 
 
+*navigator.contacts.create*
 
-*navigator.contacts.create:*
+*navigator.contacts.find*
+
+*navigator.contacts.pickContact*
+
+
+
+
+**navigator.contacts.create:**
 
 The navigator.contacts.create method is synchronous, and returns a new Contact object.
 
@@ -173,10 +175,9 @@ Once you have all the feilds you want and like the contact saved to the device i
   
   
 
-*navigator.contacts.find*
+**navigator.contacts.find**
 
 The navigator.contacts.find method executes asynchronously, querying the device contacts database and returning an array of 
-
 Contact objects.
 
 The resulting objects are passed to the contactSuccess callback function specified by the contactSuccess parameter.
@@ -220,21 +221,24 @@ contactFindOptions: Search options to filter navigator.contacts. [Optional]
   
 
 Example 1:
-
+```
    function onDeviceReady() {
 
    navigator.contacts.find(["*"], onSuccess, onError);
 
    }
+   
+   ```
 
-
-   function onSuccess(contacts) {
+```
+  function onSuccess(contacts) {
 
     document.getElementById("foo2").innerHTML = 'Found ' + contacts.length + ' contacts.';
 
    }
+```
 
-
+   ```
    function onError(contactError) {
 
    console.log("Error");
@@ -243,22 +247,29 @@ Example 1:
 
    }
 
+```
 
 Example 2:
 
+```
 
    function onSuccess(contacts) {
 
     alert('Found ' + contacts.length + ' contacts.');
 
    };
+   
+   ```
 
+```
 
    function onError(contactError) {
 
     alert('onError!');
 
    };
+   
+   ```
 
 
 // find all contacts with 'Bob' in any name field
@@ -284,7 +295,8 @@ For further details check the docs.
 
 
 
-*navigator.contacts.pickContact*
+**navigator.contacts.pickContact**
+
 The navigator.contacts.pickContact method launches the Contact Picker to select a single contact. The resulting object is passed to the contactSuccess callback function specified by the contactSuccess parameter.
 
 Parameters
@@ -292,7 +304,10 @@ contactSuccess: Success callback function invoked with the single Contact object
 contactError: Error callback function, invoked when an error occurs. [Optional]
 
 Example:
-   function opencontacts() {
+
+
+  ``` 
+  function opencontacts() {
   
     navigator.contacts.pickContact(function(contact){
   
@@ -306,5 +321,5 @@ Example:
   
     });
    }
-
+```
 
