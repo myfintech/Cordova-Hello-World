@@ -8,6 +8,7 @@ Here you will find instructions for installing Cordova and creating your first p
 3. [SplashScreen](#3-splashscreen)
 4. [Contacts](#4-contacts)
 5. [TouchID](#5-touchid)
+6. [3Dtouch](#-3Dtouch)
 
 
 
@@ -419,3 +420,72 @@ You can copy-paste these lines of code for a quick test:
 
 
 
+## 6. 3Dtouch
+
+
+Only avaiable on the iPhone6s 3Dtouch also Quick Action for Home Screen icon (Static and Dynamic) and external links preview.
+
+Required plugin: ```cordova plugin add cordova-plugin-3dtouch```
+
+
+**Quick action for home screen icon**
+
+```
+  ThreeDeeTouch.configureQuickActions([
+    {
+      type: checkin, // optional, but can be used in the onHomeIconPressed callback
+      title: 'Check in', // Mandatory. Action name.
+      subtitle: 'Quickly check in', // Short Description of action.
+      iconType: 'Compose' // optional
+    },
+    {
+      type: 'share',
+      title: 'Share',
+      subtitle: 'Share like you care',
+      iconType: 'Share'
+    },
+    {
+      type: 'search',
+      title: 'Search',
+      iconType: 'Search'
+    },
+    {
+      title: 'Show favorites',
+      iconTemplate: 'HeartTemplate' // from Assets catalog
+    }
+  ]);
+  ```
+  
+  iconType is for when you want to use stock ios images like Compose, Play, Pause, Add, Location, Search, Share, Prohibit, Contact, Home, MarkLocation, Favorite, Love, Cloud, Invitation, Confirmation, Mail, Message, Date, Time, CapturePhoto, CaptureVideo, Task, TaskCompleted, Alarm, Bookmark, Shuffle, Audio, and Update.
+  
+  iconTemplate is used for custom images. It must be a valid name of an icon template in your Assets catalog.
+  
+  When a home icon is pressed, your app launches and this JS callback is invoked. I found it worked reliable when you use it like this (you should recognize the type params used previously):
+  
+  ```
+  document.addEventListener('deviceready', function () {
+    ThreeDeeTouch.onHomeIconPressed = function (payload) {
+      console.log("Icon pressed. Type: " + payload.type + ". Title: " + payload.title + ".");
+      if (payload.type == 'checkin') {
+        document.location = 'checkin.html';
+      } else if (payload.type == 'share') {
+        document.location = 'share.html';
+      } else {
+        // hook up any other icons you may have and do something awesome (e.g. launch the Camera UI, then share the image to Twitter)
+        console.log(JSON.stringify(payload));
+      }
+    }
+  }, false);
+  ```
+  
+  
+  Enable link previw:
+  
+  ```ThreeDeeTouch.enableLinkPreview();
+  ```
+  
+Yeap that simple
+
+<https://github.com/EddyVerbruggen/cordova-plugin-3dtouch>
+
+  
