@@ -1,9 +1,9 @@
-1. [Steps for creating a Cordova project.](#1-description)
+1. [Steps for creating a Cordova project.](#1-stepsforcreatingacordovaproject)
 
 
 
 ________________________________________
-## 1. **Steps for creating a Cordova project.**
+# 1. **Steps for creating a Cordova project.**
 ________________________________________
 
 1. Install android and iOS sdk's.
