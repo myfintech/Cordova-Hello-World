@@ -1,6 +1,6 @@
 ## 0. Index
 1. [Steps for creating a Cordova project.](#1-steps for creating a cordova project.)
-2. [Changing app icon.](#2-icon.)
+2. [Changing app icon.](#2-icon)
 3. [Splash Screen.](#3-splashscreen.)
 
 
@@ -74,7 +74,7 @@ By defualt the app will run on your device if it's connected. Otherwise it will 
 
 
 _____________________
-## 2. Icon.
+## 2. Icon
 _____________________
 
 
