@@ -9,6 +9,7 @@ Here you will find instructions for installing Cordova and creating your first p
 4. [Contacts](#4-contacts)
 5. [TouchID](#5-touchid)
 6. [3Dtouch](#6-3dtouch)
+7. [Share](#7-share)
 
 
 
@@ -488,5 +489,8 @@ Required plugin: ```cordova plugin add cordova-plugin-3dtouch```
 Yeap that simple.
 
 More info: <https://github.com/EddyVerbruggen/cordova-plugin-3dtouch>
+
+
+## 7. Share
 
   
