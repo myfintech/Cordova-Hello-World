@@ -11,6 +11,7 @@ Here you will find instructions for installing Cordova and creating your first p
 6. [3Dtouch](#6-3dtouch)
 7. [Share](#7-share)
 8. [DeepLinking](#8-deeplinking)
+9. [AutoFocus](#9-autofocus)
 
 
 
@@ -631,3 +632,31 @@ app.initialize();
 ```
 
 More Info:<https://github.com/EddyVerbruggen/Custom-URL-scheme>
+
+
+## 9. AutoFocus 
+
+AutoFocus does not require a plugin.
+
+```
+<!DOCTYPE html>
+<html>
+    <body>
+      <br></br>
+      <br></br>
+      <br></br>
+      <input type="text" id="firstName" placeholder="First Name" autofocus>
+      <br></br>
+      <input type="button" onclick=window.open("lastname.html"); />
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script>
+          document.getElementById("firstName").focus();
+      </script>
+    </body>
+</html>
+```
+And add the follwing code to your config.xml
+```
+<preference name="KeyboardDisplayRequiresUserAction" value="false" />
+```
