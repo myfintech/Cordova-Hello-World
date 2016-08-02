@@ -493,4 +493,48 @@ More info: <https://github.com/EddyVerbruggen/cordova-plugin-3dtouch>
 
 ## 7. Share
 
+In order to use the native share feature you must first install the plugin below
+
+```
+cordova plugin add cordova-plugin-x-socialsharing
+```
+ 
+Followed by 
+```
+cordova prepare
+```
+
+The main method of the plugin is
+
+```
+window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+```
+
+This is the complete list of currently supported params you can pass to the plugin (all optional):
+
+```
+var options = {
+  message: 'share this', // not supported on some apps (Facebook, Instagram)
+  subject: 'the subject', // fi. for email
+  files: ['', ''], // an array of filenames either locally or remotely
+  url: 'https://www.website.com/foo/#bar?a=b',
+  chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title
+}
+
+var onSuccess = function(result) {
+  console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+  console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+}
+
+var onError = function(msg) {
+  console.log("Sharing failed with message: " + msg);
+}
+
+window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+```
+
+More methods can be found in the docs along with quirks and code samples.
+
+<https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin>
+
   
