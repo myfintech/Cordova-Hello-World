@@ -10,6 +10,7 @@ Here you will find instructions for installing Cordova and creating your first p
 5. [TouchID](#5-touchid)
 6. [3Dtouch](#6-3dtouch)
 7. [Share](#7-share)
+8. [DeepLinking](#8-deeplinking)
 
 
 
@@ -530,7 +531,6 @@ var onError = function(msg) {
   console.log("Sharing failed with message: " + msg);
 }
 
-window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 ```
 
 More methods can be found in the docs along with quirks and code samples.
@@ -538,3 +538,96 @@ More methods can be found in the docs along with quirks and code samples.
 <https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin>
 
   
+## 8. DeepLinking
+
+In order to use deepLinking install the following plugin:
+
+```
+cordova plugin add cordova-plugin-customurlscheme --variable URL_SCHEME=mycoolapp
+```
+Now, if installed on the users phone, your app can luanch with any of the following links.
+
+mycoolapp://
+
+mycoolapp://somepath
+
+mycoolapp://somepath?foo=bar
+
+mycoolapp://?foo=bar
+
+mycoolapp://red
+
+mycoolapp://blue
+
+Note: "mycoolapp" is the value of URL_SCHEME you used while installing this plugin.
+
+When your app is launched by a URL, you probably want to do something based on the path and parameters in the URL. For that, you could implement the (optional) handleOpenURL(url) method, which receives the URL that was used to launch your app.
+
+```
+function handleOpenURL(url) {
+  console.log("received url: " + url);
+}
+```
+
+EX.
+
+```
+<!DOCTYPE html>
+<html>
+    <body>
+      <br></br>
+      <br></br>
+      <br></br>
+      <p>openwithurl2</p>
+      <p id="demo"></p>
+      <br></br>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
+```
+
+```
+var app = {
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+        function handleOpenURL(url) {
+        console.log("received url: " + url);
+        if (url === "openwithurl2://red"){
+          document.getElementById("demo").innerHTML = "Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red";
+        }
+        if (url === "openwithurl2://blue"){
+          document.getElementById("demo").innerHTML = "Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue ";
+        }
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+        app.receivedEvent('deviceready');
+    },
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+    }
+};
+
+app.initialize();
+```
+
+More Info:<https://github.com/EddyVerbruggen/Custom-URL-scheme>
